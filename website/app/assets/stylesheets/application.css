@@ -5,10 +5,6 @@ body {
     background-color: #EBF0F3;
 }
 
-.row .panel{
-    background-color: #EBF0F3;
-}
-
 .col-sm-4 {
     margin: 0px;
     padding: 0px;
@@ -21,6 +17,7 @@ body {
 
 .panel-green {
     border-color: #5cb85c;
+    background-color: #EBF0F3;
 }
 
 .panel-green > .panel-heading {
@@ -41,6 +38,7 @@ body {
     border-color: #d9534f;
     border-left-style: none;
     border-right-style: none;
+    background-color: #F6F7F9;
 }
 
 .panel-red > .panel-heading {
@@ -59,6 +57,7 @@ body {
 
 .panel-yellow {
     border-color: #f0ad4e;
+    background-color: #EBF0F3;
 }
 
 .panel-yellow > .panel-heading {
@@ -84,4 +83,8 @@ body {
     font-size: 1.5em;
     color: #333333;
     box-shadow: 0 6px 2px -2px #d6d6d6;
+}
+
+.toggles {
+    float: right;
 }

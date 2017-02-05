@@ -13,11 +13,11 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="https://use.fontawesome.com/886e08d705.js"></script>
-   	
+  	<script src="https://use.fontawesome.com/886e08d705.js"></script>
+
    	<!-- Fonts -->
    	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -37,11 +37,14 @@
           <div class="panel panel-green">
             <div class="panel-heading">
               <i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;
-				GOOD
+				      GOOD
+              <span class="toggles">
+                {{good.length}}
+              </span>
             </div>
             <div class="panel-body" id="good" ng-repeat="g in good"> 
               {{g.body}} 
-			  <br><i class="fa fa-user-circle" aria-hidden="true"></i>
+			        <br><i class="fa fa-user-circle" aria-hidden="true"></i>
               &nbsp;{{g.author}}
             </div>
           </div>
@@ -51,7 +54,10 @@
           <div class="panel panel-red">
             <div class="panel-heading">
               <i class="fa fa-times" aria-hidden="true"></i>&nbsp;&nbsp;
-				BAD
+				      BAD
+              <span class="toggles">
+                {{bad.length}}
+              </span>
             </div>
             <div class="panel-body" id="bad" ng-repeat="b in bad">
               {{b}}
@@ -64,6 +70,9 @@
             <div class="panel-heading">
               <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;
               IMPROVE
+              <span class="toggles">
+                {{improve.length}}
+              </span>
             </div>
             <div class="panel-body" id="improve" ng-repeat="i in improve">
               {{i}}
