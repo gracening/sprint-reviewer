@@ -6,7 +6,6 @@ app.service('dataService', function($http) {
             method: 'GET',
             url: 'http://localhost:3000/goods'
         });
-        $log.debug("get complete");
     }
 
     this.getBadData = function() {
@@ -14,7 +13,6 @@ app.service('dataService', function($http) {
             method: 'GET',
             url: 'http://localhost:3000/bads'
         });
-        $log.debug("get complete");
     }
 
     this.getImproveData = function() {
@@ -22,18 +20,43 @@ app.service('dataService', function($http) {
             method: 'GET',
             url: 'http://localhost:3000/improves'
         });
-        $log.debug("get complete");
     }
 
-    this.addGoodData = function(entry) {
+    this.addGoodData = function(id, entry, author, date) {
         return $http({
             method: 'POST',
             url: 'http://localhost:3000/goods',
             data: {
-                'id': "2",
-                'body': "o",
-                'author': "suh",
-                'date': "suh"
+                'id': id,
+                'body': entry,
+                'author': author,
+                'date': date
+            }
+        });
+    }
+
+    this.addBadData = function(id, entry, author, date) {
+        return $http({
+            method: 'POST',
+            url: 'http://localhost:3000/bads',
+            data: {
+                'id': id,
+                'body': entry,
+                'author': author,
+                'date': date
+            }
+        });
+    }
+
+    this.addImproveData = function(id, entry, author, date) {
+        return $http({
+            method: 'POST',
+            url: 'http://localhost:3000/improves',
+            data: {
+                'id': id,
+                'body': entry,
+                'author': author,
+                'date': date
             }
         });
     }
@@ -72,6 +95,7 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
     //testSetUp();
     //$log.debug("set up test data");
 
+    //GET
     dataService.getGoodData().then(function(res) {
         for (var i = 0; i < res.data.length; i++) {
             $scope.good.push({
@@ -108,11 +132,38 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
         $log.debug("Successfully retrieved improve data");
     });
 
+    //POST
     $scope.addGood = function(body) {
         $log.debug($scope.good.length+1);
-        dataService.addGoodData(body).then(function(res) {
+        dataService.addGoodData($scope.good.length+1, body, "ay", "bruh").then(function(res) {
             $scope.good.push({
                 id: $scope.good.length+1,
+                body: body,
+                author: "yup",
+                date: "yup"
+            });
+        });
+        $scope.goodInput = "";
+    };
+    
+    $scope.addBad = function(body) {
+        $log.debug("yes");
+        $log.debug($scope.bad.length+1);
+        dataService.addBadData($scope.bad.length+1, body, "ay", "bruh").then(function(res) {
+            $scope.bad.push({
+                id: $scope.bad.length+1,
+                body: body,
+                author: "yup",
+                date: "yup"
+            });
+        });
+    };
+
+    $scope.addIm = function(body) {
+        $log.debug($scope.improve.length+1);
+        dataService.addImproveData($scope.improve.length+1, body, "ay", "bruh").then(function(res) {
+            $scope.improve.push({
+                id: $scope.improve.length+1,
                 body: body,
                 author: "yup",
                 date: "yup"
