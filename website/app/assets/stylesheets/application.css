@@ -149,3 +149,13 @@ body {
 .addEntry {
     width: 100%;
 }
+
+/*FOOTER*/
+
+.footer {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: red;
+}
