@@ -2,7 +2,7 @@ body {
     margin-top: 100px;
     margin-left: 2%;
     margin-right: 2%;
-    background-color: #dceae8;
+    background-color: #EBF0F3;
 }
 
 .col-sm-4 {
@@ -16,8 +16,8 @@ body {
 }
 
 .panel-good {
-    border-color: #5cb85c;
-    background-color: #dceae8;
+    border-color: #8F7EE8;
+    background-color: #EBF0F3;
 }
 
 .panel-good > .panel-heading {
@@ -38,7 +38,7 @@ body {
     border-color: #2EC0C0;
     border-left-style: none;
     border-right-style: none;
-    background-color: #dceae8;
+    background-color: #F6F7F9;
 }
 
 .panel-bad > .panel-heading {
@@ -56,8 +56,8 @@ body {
 }
 
 .panel-improve {
-    border-color: #f0ad4e;
-    background-color: #dceae8;
+    border-color: #FF9F1C;
+    background-color: #EBF0F3;
 }
 
 .panel-improve > .panel-heading {
@@ -91,32 +91,29 @@ body {
 
 .navbar {
     margin-bottom: 0;
-    background-color: #00967a !important;
-    z-index: 9999;
-    border: 0;
-    font-size: 12px !important;
-    line-height: 1.42857143 !important;
+    background-color: white;
+    /*border-bottom: black;*/
+    font-size: 6em;
+    line-height: 1.5;
     letter-spacing: 4px;
-    border-radius: 0;
     font-family: 'Fira Sans Extra Condensed';
 }
 
 .navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
-    font-size: 22px !important;
-
+    color: #333333;
+    font-size: 22px;
 }
 
 .navbar-nav li a:hover{
-    color: #028090 !important;
-    background-color: #fff !important;
-    border-bottom-color: #200b00;
+    color: #028090;
+    background-color: #fff;
+    border-bottom-color:#02A7FF;
     border: 2px;
 } 
 
 .navbar-nav li.active a{
-    color: #028090 !important;
-    background-color: #fff !important;
-    border-bottom-color: #200b00;
+    color: #028090;
+    background-color: #fff;
+    border-bottom-color: #02A7FF;
     border: 2px;
 }
