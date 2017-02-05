@@ -15,62 +15,62 @@ body {
 	font-size: 2.5em;
 }
 
-.panel-green {
-    border-color: #5cb85c;
+.panel-good {
+    border-color: #8F7EE8;
     background-color: #EBF0F3;
 }
 
-.panel-green > .panel-heading {
-    border-color: #5cb85c;
+.panel-good > .panel-heading {
+    border-color: #8F7EE8;
     color: #fff;
-    background-color: #5cb85c;
+    background-color: #8F7EE8;
 }
 
-.panel-green > a {
+.panel-good > a {
     color: #5cb85c;
 }
 
-.panel-green > a:hover {
+.panel-good > a:hover {
     color: #3d8b3d;
 }
 
-.panel-red {
-    border-color: #d9534f;
+.panel-bad {
+    border-color: #2EC0C0;
     border-left-style: none;
     border-right-style: none;
     background-color: #F6F7F9;
 }
 
-.panel-red > .panel-heading {
-    border-color: #d9534f;
+.panel-bad > .panel-heading {
+    border-color: #2EC0C0;
     color: #fff;
-    background-color: #d9534f;
+    background-color: #2EC0C0;
 }
 
-.panel-red > a {
+.panel-bad > a {
     color: #d9534f;
 }
 
-.panel-red > a:hover {
+.panel-bad > a:hover {
     color: #b52b27;
 }
 
-.panel-yellow {
-    border-color: #f0ad4e;
+.panel-improve {
+    border-color: #FF9F1C;
     background-color: #EBF0F3;
 }
 
-.panel-yellow > .panel-heading {
-    border-color: #f0ad4e;
+.panel-improve > .panel-heading {
+    border-color: #FF9F1C;
     color: #fff;
-    background-color: #f0ad4e;
+    background-color: #FF9F1C;
 }
 
-.panel-yellow > a {
+.panel-improve > a {
     color: #f0ad4e;
 }
 
-.panel-yellow > a:hover {
+.panel-improve > a:hover {
     color: #df8a13;
 }
 
