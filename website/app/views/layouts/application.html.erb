@@ -13,27 +13,66 @@
   </head>
 
   <body ng-app="reviewer" ng-controller="Ctrl">
-    <table class="table">
-      <tr>
-        <td>
-          <div id="good" ng-repeat="g in good">
-            suh dude
-            {{g.id}}
-            {{g.body}}
-            {{g.author}}
+    <div class="container-fluid">
+      <div class="row">
+        this is the top of the page
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-4">
+          <div class="panel panel-defaul">
+            <div class="panel-body" id="good" ng-repeat="g in good"> 
+              {{g.id}}
+              {{g.body}}
+              {{g.author}}
+            </div>
           </div>
-        </td>
-        <td>
-          <div id="bad" ng-repeat="b in bad">
-            {{b}}
+        </div>
+
+        <div class="col-sm-4">
+          <div class="panel panel-defaul">
+            <div class="panel-body" id="bad" ng-repeat="b in bad">
+              {{b}}
+            </div>
           </div>
-        </td>
-        <td>
-          <div id="improve" ng-repeat="i in improve">
-            {{i}}
+        </div>
+
+        <div class="col-sm-4">
+          <div class="panel panel-defaul">
+            <div class="panel-body" id="improve" ng-repeat="i in improve">
+              {{i}}
+            </div>
           </div>
-        </td>
-      </tr>
-    </table>
+        </div>
+
+      </div>
+
+      
+
+      <%#<table class="table">
+        <tr>
+          <td>
+            <div id="good" ng-repeat="g in good">
+              suh dude
+              {{g.id}}
+              {{g.body}}
+              {{g.author}}
+            </div>
+          </td>
+          <td>
+            <div id="bad" ng-repeat="b in bad">
+              {{b}}
+            </div>
+          </td>
+          <td>
+            <div id="improve" ng-repeat="i in improve">
+              {{i}}
+            </div>
+          </td>
+        </tr>
+      </table>%>
+    </div>
+    
   </body>
 </html>
