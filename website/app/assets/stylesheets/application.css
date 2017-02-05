@@ -85,9 +85,13 @@ body {
     box-shadow: 0 6px 2px -2px #d6d6d6;
 }
 
+/*TOGGLES*/
+
 .toggles {
     float: right;
 }
+
+/*NAV*/
 
 .navbar {
     margin-bottom: 0;
@@ -117,3 +121,16 @@ body {
     border-bottom-color: #02A7FF;
     border: 2px;
 }
+
+/*BUTTONS*/
+
+.row i {
+    opacity: 1;
+}
+
+.row i:hover {
+    opacity: 0.6;
+    -webkit-transition:.3s;
+    cursor: pointer;
+}
+

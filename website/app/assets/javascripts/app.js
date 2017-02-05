@@ -24,9 +24,22 @@ app.service('dataService', function($http) {
         });
         $log.debug("get complete");
     }
+
+    // this.addGoodData = function(entry) {
+    //     return $http({
+    //         method: 'POST',
+    //         url: 'http://localhost:3000/goods',
+    //         data: {
+    //             'id': "2",
+    //             'body': "suh",
+    //             'author': "suh",
+    //             'date': "suh"
+    //         }
+    //     });
+    // }
 });
 
-app.controller("Ctrl", ["$scope", "$q", "$log", "dataService", function($scope, $q, $log, dataService) {
+app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function($scope, $q, $log, $http, dataService) {
     $log.debug("Initializing Controller");
 
     $scope.good = [];
@@ -103,6 +116,17 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "dataService", function($scope, 
         }
         $log.debug("Successfully retrieved improve data");
     });
+
+    function sendData(entry) {
+        $http.post('/goods', {
+            'id': "2",
+            'body': "suh",
+            'author': "suh",
+            'date': "suh"
+        });
+    }
+
+    sendData();
 
     //testSetUp();
     $log.debug("set up test data");
