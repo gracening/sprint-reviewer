@@ -98,14 +98,16 @@ body {
     background-color: white;
     /*border-bottom: black;*/
     font-size: 6em;
-    line-height: 1.5;
+    line-height: 40px;
     letter-spacing: 4px;
     font-family: 'Fira Sans Extra Condensed';
 }
 
 .navbar li a, .navbar .navbar-brand {
     color: #333333;
-    font-size: 22px;
+    font-size: 30px;
+    line-height: 40px;
+    height: 70px;
 }
 
 .navbar-nav li a:hover{
