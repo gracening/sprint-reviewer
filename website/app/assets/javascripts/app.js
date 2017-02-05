@@ -1,10 +1,26 @@
 var app = angular.module("reviewer", []);
 
 app.service('dataService', function($http) {
-    this.getData = function() {
+    this.getGoodData = function() {
         return $http({
             method: 'GET',
             url: 'http://localhost:3000/goods'
+        });
+        $log.debug("get complete");
+    }
+
+    this.getBadData = function() {
+        return $http({
+            method: 'GET',
+            url: 'http://localhost:3000/bads'
+        });
+        $log.debug("get complete");
+    }
+
+    this.getImproveData = function() {
+        return $http({
+            method: 'GET',
+            url: 'http://localhost:3000/improves'
         });
         $log.debug("get complete");
     }
@@ -49,7 +65,7 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "dataService", function($scope, 
 
     // }
 
-    dataService.getData().then(function(res) {
+    dataService.getGoodData().then(function(res) {
         $log.debug(res.data.length);
         for (var i = 0; i < res.data.length; i++) {
             $scope.good.push({
@@ -60,6 +76,32 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "dataService", function($scope, 
             });
         }
         $log.debug("Successfully retrieved good data");
+    });
+
+    dataService.getBadData().then(function(res) {
+        $log.debug(res.data.length);
+        for (var i = 0; i < res.data.length; i++) {
+            $scope.bad.push({
+                id: res.data[i].id,
+                body: res.data[i].body,
+                author: res.data[i].author,
+                date: res.data[i].date
+            });
+        }
+        $log.debug("Successfully retrieved bad data");
+    });
+
+    dataService.getImproveData().then(function(res) {
+        $log.debug(res.data.length);
+        for (var i = 0; i < res.data.length; i++) {
+            $scope.improve.push({
+                id: res.data[i].id,
+                body: res.data[i].body,
+                author: res.data[i].author,
+                date: res.data[i].date
+            });
+        }
+        $log.debug("Successfully retrieved improve data");
     });
 
     //testSetUp();

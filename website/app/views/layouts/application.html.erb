@@ -78,7 +78,9 @@
               </span>
             </div>
             <div class="panel-body" id="bad" ng-repeat="b in bad">
-              {{b}}
+              {{b.body}}
+              <br><i class="fa fa-user-circle" aria-hidden="true"></i>
+              &nbsp;{{b.author}}
             </div>
           </div>
         </div>
@@ -94,7 +96,9 @@
               </span>
             </div>
             <div class="panel-body" id="improve" ng-repeat="i in improve">
-              {{i}}
+              {{i.body}}
+              <br><i class="fa fa-user-circle" aria-hidden="true"></i>
+              &nbsp;{{i.author}}
             </div>
           </div>
         </div>
