@@ -1,13 +1,22 @@
 body {
     margin-top: 100px;
-    background-color: #457B9D;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: #EBF0F3;
 }
 
-
+.row .panel{
+    background-color: #EBF0F3;
+}
 
 .col-sm-4 {
     margin: 0px;
     padding: 0px;
+}
+
+.panel-heading {
+	font-family: 'Fira Sans Extra Condensed';
+	font-size: 2.5em;
 }
 
 .panel-green {
@@ -62,4 +71,15 @@ body {
 
 .panel-yellow > a:hover {
     color: #df8a13;
+}
+
+.panel-body {
+    margin: 3%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: white;
+    font-family: 'Dosis';
+    font-size: 1.5em;
+    color: #333333;
+    box-shadow: 0 6px 2px -2px #d6d6d6;
 }
