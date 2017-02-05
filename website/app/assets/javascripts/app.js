@@ -112,7 +112,6 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
 
     //GET
     dataService.getGoodData().then(function(res) {
-        $log.debug(res);
         for (var i = 0; i < res.data.length; i++) {
             $scope.good.push({
                 id: res.data[i].id,

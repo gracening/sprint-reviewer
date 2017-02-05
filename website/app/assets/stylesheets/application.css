@@ -136,11 +136,11 @@ body {
 
 /*BUTTONS*/
 
-.row i {
+.row i.editButton {
     opacity: 1;
 }
 
-.row i:hover {
+.row i.editButton:hover {
     opacity: 0.6;
     -webkit-transition:.3s;
     cursor: pointer;
