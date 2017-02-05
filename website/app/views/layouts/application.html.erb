@@ -4,24 +4,35 @@
     <title>Sprint Reviewer</title>
 	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/app/assets/stylesheets/application.css"> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body ng-app="reviewer" ng-controller="Ctrl">
+ 
+
     <div class="container-fluid">
       <div class="row">
-        this is the top of the page
+        <h2 >2017-2-4</h2>
       </div>
 
       <div class="row">
 
         <div class="col-sm-4">
-          <div class="panel panel-defaul">
+          <div class="panel panel-green">
+            <div class="panel-heading">
+              <h3 style="text-align: center">GOOD</h3>
+            </div>
             <div class="panel-body" id="good" ng-repeat="g in good"> 
               {{g.id}}
               {{g.body}}
@@ -31,7 +42,10 @@
         </div>
 
         <div class="col-sm-4">
-          <div class="panel panel-defaul">
+          <div class="panel panel-red">
+            <div class="panel-heading">
+              <h3 style="text-align: center">BAD</h3>
+            </div>
             <div class="panel-body" id="bad" ng-repeat="b in bad">
               {{b}}
             </div>
@@ -39,7 +53,10 @@
         </div>
 
         <div class="col-sm-4">
-          <div class="panel panel-defaul">
+          <div class="panel panel-yellow">
+            <div class="panel-heading">
+              <h3 style="text-align: center">IMPROVE</h3>
+            </div>
             <div class="panel-body" id="improve" ng-repeat="i in improve">
               {{i}}
             </div>
@@ -48,30 +65,6 @@
 
       </div>
 
-      
-
-      <%#<table class="table">
-        <tr>
-          <td>
-            <div id="good" ng-repeat="g in good">
-              suh dude
-              {{g.id}}
-              {{g.body}}
-              {{g.author}}
-            </div>
-          </td>
-          <td>
-            <div id="bad" ng-repeat="b in bad">
-              {{b}}
-            </div>
-          </td>
-          <td>
-            <div id="improve" ng-repeat="i in improve">
-              {{i}}
-            </div>
-          </td>
-        </tr>
-      </table>%>
     </div>
     
   </body>
