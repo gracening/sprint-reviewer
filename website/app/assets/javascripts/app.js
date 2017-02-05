@@ -142,12 +142,15 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
                 author: "yup",
                 date: "yup"
             });
+            $scope.goodInput = "";
         });
-        $scope.goodInput = "";
     };
-    
+
+    $scope.ayy = function() {
+        $log.debug("jesus");
+    }
+
     $scope.addBad = function(body) {
-        $log.debug("yes");
         $log.debug($scope.bad.length+1);
         dataService.addBadData($scope.bad.length+1, body, "ay", "bruh").then(function(res) {
             $scope.bad.push({
@@ -156,6 +159,7 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
                 author: "yup",
                 date: "yup"
             });
+            $scope.badInput = "";
         });
     };
 
@@ -168,7 +172,9 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
                 author: "yup",
                 date: "yup"
             });
+            $scope.imInput = "";
         });
+        $log.debug("Posted to Improve");
     };
 
     //will take index
