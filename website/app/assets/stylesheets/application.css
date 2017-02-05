@@ -134,3 +134,16 @@ body {
     cursor: pointer;
 }
 
+/*MODAL*/
+
+.modal-title {
+    color: #333333;
+}
+
+.modal-body {
+    color: #333333;
+}
+
+.addEntry {
+    width: 100%;
+}

@@ -56,7 +56,31 @@
 				      GOOD
               <span class="toggles">
                 {{good.length}} &nbsp;&nbsp;
-                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+
+                <i class="fa fa-plus-square-o" aria-hidden="true" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"></i>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+                  
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">What went well?</h4>
+                      </div>
+                      <div class="modal-body">
+                        <input class="addEntry" type="text" ng-model="goodInput">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addGood(goodInput)">Add</button>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+
+
+
               </span>
             </div>
             <div class="panel-body" id="good" ng-repeat="g in good"> 

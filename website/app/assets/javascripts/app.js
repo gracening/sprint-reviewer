@@ -46,11 +46,6 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
     $scope.bad = [];
     $scope.improve = [];
 
-    //$scope.data = null;
-
-    // var DBNAME = "development";
-    // var db = openDatabase(DBNAME, '1.0', 'ay lmao', 2 * 1024 * 1024);
-
     function testSetUp() {
         for (var i = 0; i < 10; i++) {
             $scope.good.push({
@@ -74,12 +69,10 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
         }
     }
 
-    // function importData() {
-
-    // }
+    //testSetUp();
+    //$log.debug("set up test data");
 
     dataService.getGoodData().then(function(res) {
-        $log.debug(res.data.length);
         for (var i = 0; i < res.data.length; i++) {
             $scope.good.push({
                 id: res.data[i].id,
@@ -92,7 +85,6 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
     });
 
     dataService.getBadData().then(function(res) {
-        $log.debug(res.data.length);
         for (var i = 0; i < res.data.length; i++) {
             $scope.bad.push({
                 id: res.data[i].id,
@@ -105,7 +97,6 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
     });
 
     dataService.getImproveData().then(function(res) {
-        $log.debug(res.data.length);
         for (var i = 0; i < res.data.length; i++) {
             $scope.improve.push({
                 id: res.data[i].id,
@@ -117,18 +108,27 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
         $log.debug("Successfully retrieved improve data");
     });
 
-    function sendData(entry) {
-        $http.post('/goods', {
+    // function sendData(entry) {
+    //     $http.post('/goods', {
+    //         'id': "2",
+    //         'body': "suh",
+    //         'author': "suh",
+    //         'date': "suh"
+    //     });
+    // }
+
+    $scope.addGood = function(body) {
+        $log.debug($scope.good.length+1);
+        $log.debug(body);
+        var data =  {
             'id': "2",
-            'body': "suh",
+            'body': "yey",
             'author': "suh",
             'date': "suh"
-        });
-    }
+        }
+        $http.post('/goods', JSON.stringify(data));
+    };
 
-    sendData();
 
-    //testSetUp();
-    $log.debug("set up test data");
 }]);
 
