@@ -3,22 +3,37 @@
   <head>
     <title>Sprint Reviewer</title>
 	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/app/assets/stylesheets/application.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body ng-app="reviewer" ng-controller="Ctrl">
-  bruh
-    <div id="good" ng-repeat="g in good">
-      suh dude
-      {{g.id}}
-    </div>
-    <div id="bad" ng-repeat="b in bad">
-      {{b}}
-    </div>
-    <div id="improve" ng-repeat="i in improve">
-      {{i}}
-    </div>
+    <table class="table">
+      <tr>
+        <td>
+          <div id="good" ng-repeat="g in good">
+            suh dude
+            {{g.id}}
+            {{g.body}}
+            {{g.author}}
+          </div>
+        </td>
+        <td>
+          <div id="bad" ng-repeat="b in bad">
+            {{b}}
+          </div>
+        </td>
+        <td>
+          <div id="improve" ng-repeat="i in improve">
+            {{i}}
+          </div>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
