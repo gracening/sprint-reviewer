@@ -11,6 +11,8 @@ class GoodsController < ActionController::API
   # GET /goods/1
   # GET /goods/1.json
   def show
+    set_good
+    render json: @good
   end
 
   # POST /goods
@@ -28,8 +30,9 @@ class GoodsController < ActionController::API
   # PATCH/PUT /goods/1
   # PATCH/PUT /goods/1.json
   def update
+    set_good
     if @good.update(good_params)
-      render :show, status: :ok, location: @good
+      render json: :index, status: :ok, location: @good
     else
       render json: @good.errors, status: :unprocessable_entity
     end
@@ -38,6 +41,7 @@ class GoodsController < ActionController::API
   # DELETE /goods/1
   # DELETE /goods/1.json
   def destroy
+    set_good
     @good.destroy
   end
 
