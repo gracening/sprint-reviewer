@@ -39,6 +39,8 @@ body {
 
 .panel-red {
     border-color: #d9534f;
+    border-left-style: none;
+    border-right-style: none;
 }
 
 .panel-red > .panel-heading {
