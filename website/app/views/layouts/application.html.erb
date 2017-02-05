@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Website</title>
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <title>Sprint Reviewer</title>
+	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
-  	suh dude
+  <body ng-app="reviewer" ng-controller="Ctrl">
+  bruh
+    <div id="good" ng-repeat="g in good">
+      suh dude
+      {{g.id}}
+    </div>
+    <div id="bad" ng-repeat="b in bad">
+      {{b}}
+    </div>
+    <div id="improve" ng-repeat="i in improve">
+      {{i}}
+    </div>
   </body>
 </html>
