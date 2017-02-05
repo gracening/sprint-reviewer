@@ -19,7 +19,7 @@ class GoodsController < ActionController::API
     @good = Good.new(good_params)
 
     if @good.save
-      render :show, status: :created, location: @good
+      render json: :index, status: :created, location: @good
     else
       render json: @good.errors, status: :unprocessable_entity
     end

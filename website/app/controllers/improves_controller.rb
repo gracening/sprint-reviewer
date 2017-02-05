@@ -19,7 +19,7 @@ class ImprovesController < ActionController::API
     @improfe = Improve.new(improfe_params)
 
     if @improfe.save
-      render :show, status: :created, location: @improfe
+      render json: :index, status: :created, location: @improfe
     else
       render json: @improfe.errors, status: :unprocessable_entity
     end

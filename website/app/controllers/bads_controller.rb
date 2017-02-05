@@ -19,7 +19,7 @@ class BadsController < ActionController::API
     @bad = Bad.new(bad_params)
 
     if @bad.save
-      render :show, status: :created, location: @bad
+      render json: :index, status: :created, location: @bad
     else
       render json: @bad.errors, status: :unprocessable_entity
     end
