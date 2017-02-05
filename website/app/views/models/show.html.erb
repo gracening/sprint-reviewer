@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Good:</strong>
+  <%= @model.good %>
+</p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @model.id %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @model.author %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @model.date %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @model.body %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @model.team %>
+</p>
+
+<%= link_to 'Edit', edit_model_path(@model) %> |
+<%= link_to 'Back', models_path %>

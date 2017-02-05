@@ -1,0 +1,1 @@
+json.array! @improves, partial: 'improves/improfe', as: :improfe
