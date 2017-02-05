@@ -1,3 +1,0 @@
-# skipls
-
-Denton was here.
