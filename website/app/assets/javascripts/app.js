@@ -25,18 +25,18 @@ app.service('dataService', function($http) {
         $log.debug("get complete");
     }
 
-    // this.addGoodData = function(entry) {
-    //     return $http({
-    //         method: 'POST',
-    //         url: 'http://localhost:3000/goods',
-    //         data: {
-    //             'id': "2",
-    //             'body': "suh",
-    //             'author': "suh",
-    //             'date': "suh"
-    //         }
-    //     });
-    // }
+    this.addGoodData = function(entry) {
+        return $http({
+            method: 'POST',
+            url: 'http://localhost:3000/goods',
+            data: {
+                'id': "2",
+                'body': "o",
+                'author': "suh",
+                'date': "suh"
+            }
+        });
+    }
 });
 
 app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function($scope, $q, $log, $http, dataService) {
@@ -108,26 +108,24 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
         $log.debug("Successfully retrieved improve data");
     });
 
-    // function sendData(entry) {
-    //     $http.post('/goods', {
-    //         'id': "2",
-    //         'body': "suh",
-    //         'author': "suh",
-    //         'date': "suh"
-    //     });
-    // }
-
     $scope.addGood = function(body) {
         $log.debug($scope.good.length+1);
-        $log.debug(body);
-        var data =  {
-            'id': "2",
-            'body': "yey",
-            'author': "suh",
-            'date': "suh"
-        }
-        $http.post('/goods', JSON.stringify(data));
+        dataService.addGoodData(body).then(function(res) {
+            $scope.good.push({
+                id: $scope.good.length+1,
+                body: body,
+                author: "yup",
+                date: "yup"
+            });
+        });
     };
+
+    //will take index
+    // $scope.aylmao = function() {
+    //     $http.delete('/goods', ).then(function(res) {
+
+    //     });
+    // }
 
 
 }]);
