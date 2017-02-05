@@ -2,7 +2,7 @@ body {
     margin-top: 100px;
     margin-left: 2%;
     margin-right: 2%;
-    background-color: #EBF0F3;
+    background-color: #dceae8;
 }
 
 .col-sm-4 {
@@ -17,7 +17,7 @@ body {
 
 .panel-green {
     border-color: #5cb85c;
-    background-color: #EBF0F3;
+    background-color: #dceae8;
 }
 
 .panel-green > .panel-heading {
@@ -38,7 +38,7 @@ body {
     border-color: #d9534f;
     border-left-style: none;
     border-right-style: none;
-    background-color: #F6F7F9;
+    background-color: #dceae8;
 }
 
 .panel-red > .panel-heading {
@@ -57,7 +57,7 @@ body {
 
 .panel-yellow {
     border-color: #f0ad4e;
-    background-color: #EBF0F3;
+    background-color: #dceae8;
 }
 
 .panel-yellow > .panel-heading {
@@ -88,3 +88,37 @@ body {
 .toggles {
     float: right;
 }
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #00967a !important;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: 'Fira Sans Extra Condensed';
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+    font-size: 22px !important;
+
+}
+
+.navbar-nav li a:hover{
+    color: #028090 !important;
+    background-color: #fff !important;
+    border-bottom-color: #200b00;
+    border: 2px;
+} 
+
+.navbar-nav li.active a{
+    color: #028090 !important;
+    background-color: #fff !important;
+    border-bottom-color: #200b00;
+    border: 2px;
+}
+
+
