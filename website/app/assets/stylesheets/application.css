@@ -85,10 +85,20 @@ body {
     box-shadow: 0 6px 2px -2px #d6d6d6;
 }
 
+.panel-body:hover .toggles-entry {
+    color: #969696;
+    -webkit-transition:.3s;
+}
+
 /*TOGGLES*/
 
 .toggles {
     float: right;
+}
+
+.toggles-entry {
+    float: right;
+    color: white;
 }
 
 /*NAV*/

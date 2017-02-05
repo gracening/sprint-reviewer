@@ -1,6 +1,7 @@
 var app = angular.module("reviewer", []);
 
 app.service('dataService', function($http) {
+    //GET
     this.getGoodData = function() {
         return $http({
             method: 'GET',
@@ -22,6 +23,7 @@ app.service('dataService', function($http) {
         });
     }
 
+    //POST
     this.addGoodData = function(id, entry, author, date) {
         return $http({
             method: 'POST',
@@ -60,6 +62,19 @@ app.service('dataService', function($http) {
             }
         });
     }
+
+    // this.deleteGood = function(id) {
+    //     return $http({
+    //         method: 'DELETE',
+    //         url: 'http://localhost:3000/improves',
+    //         data: {
+    //             'id': id,
+    //             'body': entry,
+    //             'author': author,
+    //             'date': date
+    //         }
+    //     });
+    // }
 });
 
 app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function($scope, $q, $log, $http, dataService) {
@@ -97,6 +112,7 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
 
     //GET
     dataService.getGoodData().then(function(res) {
+        $log.debug(res);
         for (var i = 0; i < res.data.length; i++) {
             $scope.good.push({
                 id: res.data[i].id,
@@ -177,13 +193,10 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
         $log.debug("Posted to Improve");
     };
 
-    //will take index
-    // $scope.aylmao = function() {
-    //     $http.delete('/goods', ).then(function(res) {
-
-    //     });
-    // }
-
+    $scope.deleteGood = function(userId){
+        $log.debug(userId);
+        $http.delete('/goods/' + userId);
+    };
 
 }]);
 
