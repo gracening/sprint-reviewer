@@ -1,61 +1,20 @@
 var app = angular.module("reviewer", []);
 
 app.service('dataService', function($http) {
-    //GET
-    this.getGoodData = function() {
+    this.getTableData = function() {
         return $http({
             method: 'GET',
-            url: 'http://localhost:3000/goods'
+            url: 'http://localhost:3000/tables'
         });
     }
 
-    this.getBadData = function() {
-        return $http({
-            method: 'GET',
-            url: 'http://localhost:3000/bads'
-        });
-    }
-
-    this.getImproveData = function() {
-        return $http({
-            method: 'GET',
-            url: 'http://localhost:3000/improves'
-        });
-    }
-
-    //POST
-    this.addGoodData = function(id, entry, author, date) {
+    this.addTableData = function(id, type, entry, author, date) {
         return $http({
             method: 'POST',
-            url: 'http://localhost:3000/goods',
+            url: 'http://localhost:3000/tables',
             data: {
                 'id': id,
-                'body': entry,
-                'author': author,
-                'date': date
-            }
-        });
-    }
-
-    this.addBadData = function(id, entry, author, date) {
-        return $http({
-            method: 'POST',
-            url: 'http://localhost:3000/bads',
-            data: {
-                'id': id,
-                'body': entry,
-                'author': author,
-                'date': date
-            }
-        });
-    }
-
-    this.addImproveData = function(id, entry, author, date) {
-        return $http({
-            method: 'POST',
-            url: 'http://localhost:3000/improves',
-            data: {
-                'id': id,
+                'type': type,
                 'body': entry,
                 'author': author,
                 'date': date
@@ -150,11 +109,11 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
     //POST
     $scope.addGood = function(body) {
         $log.debug($scope.good.length+1);
-        dataService.addGoodData($scope.good.length+1, body, "ay", "bruh").then(function(res) {
+        dataService.addGoodData($scope.good.length+1, body, "ali", "bruh").then(function(res) {
             $scope.good.push({
                 id: $scope.good.length+1,
                 body: body,
-                author: "yup",
+                author: "ali",
                 date: "yup"
             });
             $scope.goodInput = "";
@@ -196,6 +155,13 @@ app.controller("Ctrl", ["$scope", "$q", "$log", "$http", "dataService", function
         $log.debug(userId);
         $http.delete('/goods/' + userId);
     };
+    
+    //will take index
+    // $scope.aylmao = function() {
+    //     $http.delete('/goods', ).then(function(res) {
+
+    //     });
+    // }
 
 }]);
 
