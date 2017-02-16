@@ -12,44 +12,14 @@
 
 ActiveRecord::Schema.define(version: 20170215202545) do
 
-  create_table "bads", id: false, force: :cascade do |t|
-    t.integer  "id"
-    t.string   "author"
-    t.string   "date"
-    t.string   "body"
-    t.string   "team"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "goods", id: false, force: :cascade do |t|
-    t.integer  "id"
-    t.string   "author"
-    t.string   "date"
-    t.string   "body"
-    t.string   "team"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "improves", id: false, force: :cascade do |t|
-    t.integer  "id"
-    t.string   "author"
-    t.string   "date"
-    t.string   "body"
-    t.string   "team"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tables", force: :cascade do |t|
-    t.string   "type"
+    t.string   "column_name"
     t.string   "author"
     t.string   "sprint"
     t.string   "body"
     t.string   "team"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

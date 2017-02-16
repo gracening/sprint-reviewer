@@ -12,7 +12,6 @@ class TablesController < ApplicationController
   # GET /tables/1.json
   def show
     set_table
-    render json: @good
   end
 
   # POST /tables
@@ -21,7 +20,7 @@ class TablesController < ApplicationController
     @table = Table.new(table_params)
 
     if @table.save
-      render :show, status: :created, location: @table
+      render json: :show, status: :created, location: @table
     else
       render json: @table.errors, status: :unprocessable_entity
     end
@@ -49,10 +48,11 @@ class TablesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_table
       @table = Table.find(params[:id])
+      render json: @table
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def table_params
-      params.require(:table).permit(:author, :date, :body, :team)
+      params.require(:table).permit(:column_name, :author, :sprint, :body, :team)
     end
 end

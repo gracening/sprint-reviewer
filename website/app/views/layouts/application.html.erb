@@ -3,7 +3,6 @@
   <head>
     <title>Sprint Reviewer</title>
 	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/app/assets/stylesheets/application.css"> 
     
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -68,7 +67,7 @@
               <i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;
 				      GOOD
               <span class="toggles">
-                {{good.length}} &nbsp;&nbsp;
+                {{table.length}} &nbsp;&nbsp;
 
                 <i class="fa fa-plus-square-o editButton" aria-hidden="true" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"></i>
                 <!-- Modal -->
@@ -82,10 +81,10 @@
                         <h4 class="modal-title">What went well?</h4>
                       </div>
                       <div class="modal-body">
-                        <input class="addEntry" type="text" ng-model="goodInput">
+                        <input class="addEntry" type="text" ng-model="tableInput">
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addGood(goodInput)">Add</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addTable(tableInput)">Add</button>
                       </div>
                     </div>
                     
@@ -94,14 +93,14 @@
 
               </span>
             </div>
-            <div class="panel-body" id="good" ng-repeat="g in good"> 
-              {{g.body}} 
+            <div class="panel-body" id="table" ng-repeat="t in table"> 
+              {{t.body}} 
 			        <br><i class="fa fa-user-circle" aria-hidden="true"></i>
-              &nbsp;{{g.author}}
+              &nbsp;{{t.author}}
 
-              <span class="toggles-entry" ng-click="deleteGood(g.id)">
+              <span class="toggles-entry" ng-click="deleteTable(t.id)">
                 <i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;
-                <i class="fa fa-times" aria-hidden="true"></i>
+                <i class="fa fa-times" aria-hidden="true" ng-click="deleteTable(t.id)"></i>
               </span>
             </div>
           </div>
